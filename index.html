@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Music Player</title>
     <link rel="stylesheet" href="./styles.css">
+    <!-- Si quieres usar iconos de Material Design, descomenta la línea de abajo -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="module" src="./main.js"></script>
 </head>
 <body>
@@ -12,30 +14,36 @@
         <div class="music-player">
             <nav>
                 <div class="circle">
-                    <span>back</span>
+                    <span>back</span> <!-- Podría ser un icono como <span class="material-icons">arrow_back</span> -->
                 </div>
                 <div class="circle">
-                    <span>bars</span>
+                    <span>bars</span> <!-- Podría ser un icono como <span class="material-icons">menu</span> -->
                 </div>
             </nav>
 
             <div id="song-details">
-                <img src="./media/default_img.jpg" alt="" id="song-img">
+                <img src="./media/default_img.jpg" alt="Song Cover" id="song-img">
                 <h1 id="title"></h1>
                 <h3 id="artist"></h3>
             </div>
 
             <div class="audio">
-                <audio controls id="media" hidden>
-                    <!--<source id="audio" src="" type="audio/mpeg">-->
-                </audio>
+                <audio controls id="media" hidden></audio>
                 <input type="range" value="0" id="progress">
+                <div class="time-display">
+                    <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                </div>
             </div>
 
             <div class="song-controls">
-                <span id="lastest">last</span>
-                <span id="play" class="play">play</span>
-                <span id="forward">forward</span>
+                <span id="prev-btn">last</span>
+                <span id="play-pause-btn" class="play">play</span>
+                <span id="next-btn">forward</span>
+            </div>
+
+            <div class="volume-control">
+                <span>Vol:</span>
+                <input type="range" value="100" id="volume-slider" min="0" max="100">
             </div>
 
         </div>
